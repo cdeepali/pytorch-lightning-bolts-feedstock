@@ -1,8 +1,9 @@
 tests:
   - name: Setup PyTorch-Lightning-Bolts Tests
     command: |
+        conda install -y git
         git clone -b $(python -c "import pl_bolts; print(pl_bolts.__version__)") https://github.com/PyTorchLightning/pytorch-lightning-bolts.git
-        conda install -y git pytest regex typed-ast
+        conda install -y pytest regex typed-ast
 {% if python=='3.6' %}
         conda install -y dataclasses
 {% endif %}
